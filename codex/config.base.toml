@@ -1,0 +1,14 @@
+# Baseline for ~/.codex/config.toml.
+#
+# The Codex app owns config.toml (trusted projects, plugin and MCP paths,
+# UI state), so it isn't symlinked. install.sh writes each top-level
+# `key = value` below into it instead: replacing the key if it exists,
+# adding it otherwise. Only single-line top-level keys are supported here;
+# no [tables].
+
+model = "gpt-6-astra"
+model_reasoning_effort = "low"
+
+# Read a repo's CLAUDE.md when it has no AGENTS.md, so Claude-only
+# projects (dotfiles, ofida-connect) still give Codex their instructions.
+project_doc_fallback_filenames = ["CLAUDE.md"]

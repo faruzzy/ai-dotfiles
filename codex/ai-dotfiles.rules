@@ -1,0 +1,29 @@
+# Codex command-approval rules shared across machines.
+# Linked to ~/.codex/rules/ai-dotfiles.rules. Codex loads every *.rules file in
+# that directory; "always allow" approvals from the app keep going to
+# default.rules, which stays local.
+#
+# Curated from default.rules: only generic prefixes, no one-off commands with
+# absolute paths or window IDs.
+
+# git
+prefix_rule(pattern=["git", "add"], decision="allow")
+prefix_rule(pattern=["git", "commit"], decision="allow")
+prefix_rule(pattern=["git", "switch"], decision="allow")
+prefix_rule(pattern=["git", "push"], decision="allow")
+
+# tmux
+prefix_rule(pattern=["tmux", "info"], decision="allow")
+prefix_rule(pattern=["tmux", "show"], decision="allow")
+prefix_rule(pattern=["tmux", "display-message"], decision="allow")
+prefix_rule(pattern=["tmux", "list-panes"], decision="allow")
+prefix_rule(pattern=["tmux", "source-file"], decision="allow")
+
+# editor / runtimes
+prefix_rule(pattern=["nvim", "--headless"], decision="allow")
+prefix_rule(pattern=["npm", "install"], decision="allow")
+prefix_rule(pattern=["npm", "run", "dev"], decision="allow")
+
+# aerospace
+prefix_rule(pattern=["aerospace", "reload-config"], decision="allow")
+prefix_rule(pattern=["aerospace", "list-apps"], decision="allow")
