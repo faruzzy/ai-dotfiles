@@ -19,6 +19,7 @@ Applies to every project, in Claude Code (`~/.claude/CLAUDE.md`) and Codex (`~/.
 ## Code
 
 - Comment only where a reader would otherwise struggle: a non-obvious reason, constraint, or workaround. Don't narrate what the code does. Keep comments short and in plain English.
+- Derive, don't track. If a value can be computed from an existing source of truth (list length, timestamps, the DOM or buffer, props), compute it instead of adding a flag, cache, or copied state that has to be kept in sync. In React, compute during render rather than mirroring props into `useState` + `useEffect`. Store state only when it can't be derived (user choices, event history), and cache only for a measured cost, keyed on the underlying data.
 
 ## Correctness
 
