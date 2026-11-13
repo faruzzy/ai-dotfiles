@@ -1,0 +1,8 @@
+# MCP servers registered in both Claude Code (user scope) and Codex by install.sh.
+# Format: <name> <command> [args...]   (stdio servers only, no secrets here)
+#
+# Already-registered servers are skipped. To change one, remove it first:
+#   claude mcp remove --scope user <name>; codex mcp remove <name>
+
+# Inspect a running app in Chrome: console, network, DOM, performance traces.
+chrome-devtools npx -y chrome-devtools-mcp@latest

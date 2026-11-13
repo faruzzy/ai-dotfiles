@@ -137,6 +137,34 @@ merge_codex_config() {
     log_success "updated ${config/#"$HOME"/\~} (previous copy in $BACKUP_DIR)"
 }
 
+# Register each server in mcp/servers.txt with both CLIs. Servers that already
+# exist are left untouched, so edit or remove them with `claude mcp` /
+# `codex mcp` directly.
+add_mcp_servers() {
+    log_info "MCP servers"
+    local name cmd
+    while read -r name cmd <&3; do
+        [[ -z "$name" || "$name" == \#* ]] && continue
+        # $cmd is word-split on purpose: it's a command plus its args.
+        # shellcheck disable=SC2086
+        if ! command -v claude >/dev/null; then
+            log_warning "claude CLI not found, skipping $name"
+        elif claude mcp get "$name" >/dev/null 2>&1; then
+            :
+        else
+            run claude mcp add --scope user "$name" -- $cmd
+        fi
+        # shellcheck disable=SC2086
+        if ! command -v codex >/dev/null; then
+            log_warning "codex CLI not found, skipping $name"
+        elif codex mcp get "$name" >/dev/null 2>&1; then
+            :
+        else
+            run codex mcp add "$name" -- $cmd
+        fi
+    done 3< "$REPO/mcp/servers.txt"
+}
+
 main() {
     (( DRY_RUN )) && log_info "Dry run: nothing will be changed"
     link_instructions
@@ -144,6 +172,7 @@ main() {
     link_claude_settings
     link_codex_rules
     merge_codex_config
+    add_mcp_servers
     log_success "Done. Start a new Claude Code / Codex session to pick up changes."
 }
 
