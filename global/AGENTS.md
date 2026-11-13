@@ -30,6 +30,7 @@ Applies to every project, in Claude Code (`~/.claude/CLAUDE.md`) and Codex (`~/.
 ## Git
 
 - Commit messages: Conventional Commits, `type(scope): imperative subject`, with a body explaining why when it isn't obvious.
+- Commit grouping: each commit is one logical change. Put related edits together, even across files, and split unrelated ones into separate commits instead of one catch-all. Don't split a single change into many tiny commits either.
 - Never add a `Co-Authored-By` trailer or a "Generated with …" line to commits or PR descriptions. The history should read as mine.
 - Never force-push, rewrite pushed history, or delete branches without asking.
 
