@@ -10,10 +10,22 @@ Applies to every project, in Claude Code (`~/.claude/CLAUDE.md`) and Codex (`~/.
 - A small, polished core beats broad, half-done coverage. Push back on scope creep, including mine. Don't over-architect.
 - If something is unclear, ask instead of guessing.
 
+## Scope
+
+- Change only what the task needs. Don't refactor unrelated code, rename things, or add features I didn't ask for.
+- When you notice an unrelated problem, leave it alone and keep a note. At the end, list those as follow-ups (where, what, why it matters) so I can decide whether to include them or handle them in a separate branch.
+- If a fix still fails after two or three attempts, stop. Explain what you tried, what the evidence says, and what you'd try next, instead of looping.
+
+## Code
+
+- Comment only where a reader would otherwise struggle: a non-obvious reason, constraint, or workaround. Don't narrate what the code does. Keep comments short and in plain English.
+
 ## Correctness
 
 - I often work with fast-moving tools (Next.js, Tailwind v4, Auth.js, AWS). Check the official docs for the installed version before relying on an API or config option you remember.
 - Before calling something done, run the project's own checks (typecheck, lint, tests, build). If something fails or you skipped a step, say so plainly.
+- Don't open pages in a browser (e.g. via Chrome DevTools MCP) unless I asked for it; if inspecting a page would help, ask first.
+- Review your own changes as skeptically as someone else's. Look for what's wrong, not for confirmation. For non-trivial work, get an independent review from a fresh subagent that sees the diff, not your reasoning.
 
 ## Git
 
