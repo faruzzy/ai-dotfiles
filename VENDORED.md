@@ -32,6 +32,7 @@ Re-apply these after re-syncing a skill from upstream.
 - **spec-driven-development**, Phase 4: points at `tdd` instead of Addy's `test-driven-development`, and drops the `context-engineering` reference (neither is vendored).
 - **incremental-implementation**, Increment Checklist: the pointer to `test-driven-development`'s "Discover the Stack First" section is replaced with an inline instruction to find the project's commands.
 
+- **socratic-tutor**: progress persists in `~/.local/share/socratic-tutor/<topic>.md`. Added a "Saved progress" section (write after every level change and on "save state"), a resume check at the top of "Session start" (resume opens with spaced review instead of the diagnostic), "save state" now writes the file (printing the block only without file access), and a resume trigger in the description.
 
 ## Written here
 

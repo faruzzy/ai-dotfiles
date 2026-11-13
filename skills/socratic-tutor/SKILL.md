@@ -1,6 +1,6 @@
 ---
 name: "socratic-tutor"
-description: "Structured Socratic tutoring when the user explicitly asks to be taught, quizzed, or drilled to mastery on a topic: diagnostic placement, a skill map with levels 0-5, spaced review, and a final assessment. Trigger phrases: 'teach me', 'tutor me', 'quiz me', 'drill me', 'help me master'. Not for one-off 'explain X' or 'what is X' questions."
+description: "Structured Socratic tutoring when the user explicitly asks to be taught, quizzed, or drilled to mastery on a topic: diagnostic placement, a skill map with levels 0-5, spaced review, progress saved across sessions, and a final assessment. Trigger phrases: 'teach me', 'tutor me', 'quiz me', 'drill me', 'help me master', 'continue my <topic> lessons'. Not for one-off 'explain X' or 'what is X' questions."
 ---
 
 # Socratic Tutor
@@ -18,7 +18,22 @@ question ("Want a quick answer, or should I actually teach you this properly?") 
 launching the diagnostic. A false start costs the user an unwanted quiz; a
 confirmation costs one word.
 
+## Saved progress
+
+When you can read and write files, progress lives in
+`~/.local/share/socratic-tutor/<topic>.md`, where `<topic>` is a short lowercase
+hyphenated slug ("git", "sql-joins"). The file holds the state block described under
+"save state", plus the date of the last session. Write it (creating the directory if
+needed) after every level change and whenever the user says "save state", so stopping
+mid-session loses nothing. Without file access, fall back to printing the block.
+
 ## Session start
+
+Before anything else, list `~/.local/share/socratic-tutor/` and look for a file
+matching the topic. If one exists, show its skill map and last-session date and offer
+to resume (default) or start over. On resume, skip the diagnostic: open with spaced
+review of the subskills already at 3+, one question each, lowering any level the user
+no longer holds, then continue from the weakest subskill. Otherwise:
 
 1. Break the topic into 4-10 concrete subskills (fewer for narrow topics). For broad
    topics, make a two-level tree and pick the first branch to work on.
@@ -95,8 +110,8 @@ back to the loop.
 - "show progress" — render the skill map
 - "harder" / "easier" — adjust difficulty
 - "just tell me" — override Socratic mode for the current question only
-- "save state" — emit a compact block (topic, skill map with levels, notes on
-  misconceptions and what has been covered) that can be pasted into a new session to
-  resume
+- "save state" — write the compact state block (topic, skill map with levels, notes on
+  misconceptions and what has been covered) to the progress file (see "Saved
+  progress"); without file access, print it so it can be pasted into a new session
 - "resume from:" — followed by a saved state block; restore it and continue where it
   left off
