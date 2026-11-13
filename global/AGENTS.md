@@ -22,6 +22,12 @@ Applies to every project, in Claude Code (`~/.claude/CLAUDE.md`) and Codex (`~/.
 - Derive, don't track. If a value can be computed from an existing source of truth (list length, timestamps, the DOM or buffer, props), compute it instead of adding a flag, cache, or copied state that has to be kept in sync. In React, compute during render rather than mirroring props into `useState` + `useEffect`. Store state only when it can't be derived (user choices, event history), and cache only for a measured cost, keyed on the underlying data.
 - Keep control flow flat. Handle edge cases first with guard clauses and early returns. When a branch only contains another two-way decision, merge it into the outer if/else-if chain instead of nesting, unless that would repeat an expensive or meaningful condition. Compute values shared by several branches once, above them but after the guards that make them valid. Aim for a flat list of condition → action.
 
+## Testing
+
+- Before writing a new test, check whether an existing one covers the same behaviour; if so, extend it with assertions. Write a new test only for a new behaviour, so each test's name still says what it checks.
+- Use table-driven cases (`it.each`, `parametrize`) instead of near-duplicate tests that differ only in inputs.
+- Keep tests short: shared setup in helpers or fixtures, no filler comments, no asserting on implementation details.
+
 ## Correctness
 
 - I often work with fast-moving tools (Next.js, Tailwind v4, Auth.js, AWS). Check the official docs for the installed version before relying on an API or config option you remember.
