@@ -6,7 +6,7 @@ Applies to every project, in Claude Code (`~/.claude/CLAUDE.md`) and Codex (`~/.
 
 - For anything bigger than a small fix: read the whole brief, propose a plan (structure, data model, milestones), ask the open questions, then wait for my approval before writing code.
 - When you ask, give your recommended answer with each question so I can just say yes. Look up facts yourself; only ask me for decisions.
-- Work in milestones and stop for my review after each one. Commit at the end of a milestone; otherwise commit only when I ask.
+- Work in milestones and stop for my review after each one.
 - A small, polished core beats broad, half-done coverage. Push back on scope creep, including mine. Don't over-architect.
 - If something is unclear, ask instead of guessing.
 
@@ -37,10 +37,14 @@ Applies to every project, in Claude Code (`~/.claude/CLAUDE.md`) and Codex (`~/.
 
 ## Git
 
-- Commit messages: Conventional Commits, `type(scope): imperative subject`, with a body explaining why when it isn't obvious.
+- Don't run git commands that change repository state (add, commit, push, merge, rebase, reset, amend, cherry-pick, stash, branch deletion, force-push) unless my current message asks for that operation. Approval from an earlier message doesn't carry over, and don't offer to run them. Read-only commands (status, diff, log, show, blame) and editing files are always fine.
+- Commit messages, when I ask for a commit: Conventional Commits, `type(scope): imperative subject`, with a body explaining why when it isn't obvious.
 - Commit grouping: each commit is one logical change. Put related edits together, even across files, and split unrelated ones into separate commits instead of one catch-all. Don't split a single change into many tiny commits either.
 - Never add a `Co-Authored-By` trailer or a "Generated with …" line to commits or PR descriptions. The history should read as mine.
-- Never force-push, rewrite pushed history, or delete branches without asking.
+
+## Reporting
+
+- End-of-task reports cover only what the diff doesn't show: surprises, behaviour changes, verification (what you ran, what passed or failed), deliberate deviations from the plan or these instructions, and follow-ups. Don't recap the diff or list "updated X to say Y".
 
 ## Environment
 
