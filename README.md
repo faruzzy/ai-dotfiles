@@ -16,6 +16,7 @@ Personal config for Claude Code and Codex: global instructions, skills, and sett
 | `claude/settings.json` | `~/.claude/settings.json` | symlink |
 | `codex/ai-dotfiles.rules` | `~/.codex/rules/ai-dotfiles.rules` | symlink |
 | `codex/config.base.toml` | keys inside `~/.codex/config.toml` | merged, because the Codex app owns that file |
+| `mcp/servers.txt` | Claude Code (user scope) and Codex MCP config | `claude mcp add` / `codex mcp add`, skipped if already registered |
 
 ## Skills
 
@@ -30,6 +31,7 @@ Personal config for Claude Code and Codex: global instructions, skills, and sett
 | `source-driven-development` | Check official docs for the installed version before coding |
 | `shipping-and-launch` | Pre-deploy checklist, staged rollout, rollback plan |
 | `wizard` | Generate an interactive script for steps only I can do (AWS console, secrets) |
+| `fallow` | TS/JS check for unused code, circular imports, duplication; `audit` after edits |
 | `/handoff` | Summarise the session for a fresh agent |
 | `writing-for-agents` | Editing skills, CLAUDE.md, AGENTS.md (including this repo) |
 

@@ -30,8 +30,13 @@ Re-apply these after re-syncing a skill from upstream.
 - **spec-driven-development**, Phase 4: points at `tdd` instead of Addy's `test-driven-development`, and drops the `context-engineering` reference (neither is vendored).
 - **incremental-implementation**, Increment Checklist: the pointer to `test-driven-development`'s "Discover the Stack First" section is replaced with an inline instruction to find the project's commands.
 
+## Written here
+
+- **fallow**: original, based on the [fallow README](https://github.com/fallow-rs/fallow) (MIT). Inspired by bdbch/ai-dotfiles, whose version has no license and so isn't copied.
+
 ## Considered and left out
 
 - **google/elephant-goldfish-model**: design-doc workflow with ~9 reviewer subagents. Coupled skills + agents + standards, so it can only be installed whole, as a plugin. Skipped for cost; revisit for large design docs.
 - **Addy**: code-review-and-quality, code-simplification, security-and-hardening (Claude Code ships `/code-review`, `/simplify`, `/security-review`); using-agent-skills (second skill router on top of the native one); test-driven-development and debugging-and-error-recovery (Matt's `tdd` and `diagnosing-bugs` are tighter); interview-me and idea-refine (overlap `grilling`); frontend-ui-engineering (covered by the `frontend-design` plugin); the agent personas.
 - **Matt**: to-spec, to-tickets, triage, wayfinder (need an issue tracker set up per repo); course/TS-specific misc skills; in-progress skills.
+- **bdbch/ai-dotfiles**: OpenCode-only and unlicensed, so nothing copied. Ideas adopted in our own words: scope discipline, critical self-review, comment only where needed, no unprompted browser opening (`global/AGENTS.md`), Chrome DevTools MCP (`mcp/servers.txt`), the fallow skill, SCOPES.md. Not adopted: never-autocommit (conflicts with committing at milestones), 100-line review chunks, plan as the default mode.

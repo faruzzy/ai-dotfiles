@@ -13,8 +13,10 @@ The same repo runs on two Macs (personal and work) with different usernames. No 
 - `~/.codex/config.toml` is never symlinked: the Codex app rewrites it with machine-specific paths. Shared keys go in `codex/config.base.toml` as single-line top-level `key = value`; `install.sh` merges them. Tables aren't supported by the merge.
 - Codex appends "always allow" approvals to `~/.codex/rules/default.rules`, which stays local. Shared rules go in `codex/ai-dotfiles.rules`; keep them generic (no absolute paths, no one-off commands).
 - Skills must work in both tools: plain `SKILL.md` frontmatter (`name`, `description`), relative links that stay inside the skill directory (each skill is symlinked on its own, so `../` escapes it). Codex-specific metadata lives in `agents/openai.yaml`.
+- MCP servers in `mcp/servers.txt` are stdio-only and secret-free. `install.sh` only adds missing ones; it never updates or removes a registered server. A server that needs a token should read it from a file outside the repo, not from `servers.txt`.
 - Vendored skills: record upstream, pinned commit, and every local edit in `VENDORED.md`.
 - Use the `writing-for-agents` skill when editing skills or the global instructions.
+- Commits use Conventional Commits with a scope from `SCOPES.md`.
 
 ## Validating changes
 
