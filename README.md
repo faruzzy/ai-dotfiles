@@ -32,6 +32,7 @@ Personal config for Claude Code and Codex: global instructions, skills, and sett
 | `shipping-and-launch` | Pre-deploy checklist, staged rollout, rollback plan |
 | `wizard` | Generate an interactive script for steps only I can do (AWS console, secrets) |
 | `fallow` | TS/JS check for unused code, circular imports, duplication; `audit` after edits |
+| `socratic-tutor` | "Teach me X": diagnostic, skill map, one question at a time, until mastery |
 | `/handoff` | Summarise the session for a fresh agent |
 | `writing-for-agents` | Editing skills, CLAUDE.md, AGENTS.md (including this repo) |
 
