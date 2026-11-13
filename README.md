@@ -41,3 +41,7 @@ Sources, pinned commits, and local modifications: [VENDORED.md](VENDORED.md).
 ## Adding a skill
 
 Drop a directory with a `SKILL.md` into `skills/`, add a row to `VENDORED.md` if it came from elsewhere, and re-run `./install.sh`. Deleting a skill here and re-running removes its stale links.
+
+## License
+
+MIT ([LICENSE](LICENSE)). Vendored skills keep their upstream licenses, in [LICENSES/](LICENSES/).
