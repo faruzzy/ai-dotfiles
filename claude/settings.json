@@ -25,6 +25,5 @@
       }
     }
   },
-  "alwaysThinkingEnabled": true,
-  "tui": "fullscreen"
+  "alwaysThinkingEnabled": true
 }
