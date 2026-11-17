@@ -28,6 +28,7 @@ Personal config for Claude Code and Codex: global instructions, skills, and sett
 | `incremental-implementation` | Build in thin slices, verifying each one |
 | `tdd` | Red → green, testing at agreed seams |
 | `diagnosing-bugs` | Build a failing feedback loop before hypothesising |
+| `/blast-radius` | What a change could break beyond the diff, with the one fact it's safe because of proven by running code |
 | `source-driven-development` | Check official docs for the installed version before coding |
 | `shipping-and-launch` | Pre-deploy checklist, staged rollout, rollback plan |
 | `wizard` | Generate an interactive script for steps only I can do (AWS console, secrets) |

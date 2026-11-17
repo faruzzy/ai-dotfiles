@@ -17,12 +17,14 @@ Skills in `skills/` are copied from upstream and pinned. They don't update on th
 | source-driven-development | addyosmani/agent-skills | skills/source-driven-development |
 | shipping-and-launch | addyosmani/agent-skills | skills/shipping-and-launch |
 | socratic-tutor | janestreet/agent_skills | socratic-tutor |
+| blast-radius | cursor/plugins | pstack/skills/blast-radius |
 
 Pinned commits:
 
 - `mattpocock/skills` @ `5863806dd4e15c63174bee4e7515a4256792ecfa` (2026-11-12) — MIT, see `LICENSES/mattpocock-skills.MIT`
 - `addyosmani/agent-skills` @ `301b02b12bff98e4688e6984af6556802322bbde` (2026-11-12) — MIT, see `LICENSES/addyosmani-agent-skills.MIT`
 - `janestreet/agent_skills` @ `7c6715c29548a3b39d4a9545c698ee4fd17a7213` (2026-11-13) — MIT, see `LICENSES/janestreet-agent-skills.MIT`
+- `cursor/plugins` @ `536a3352a050e47cb75f86be497ea304ef342301` (2026-11-17) — MIT, see `LICENSES/cursor-plugins-pstack.MIT`
 
 ## Local changes
 
@@ -33,6 +35,7 @@ Re-apply these after re-syncing a skill from upstream.
 - **incremental-implementation**, Increment Checklist: the pointer to `test-driven-development`'s "Discover the Stack First" section is replaced with an inline instruction to find the project's commands.
 
 - **socratic-tutor**: progress persists in `~/.local/share/socratic-tutor/<topic>.md`. Added a "Saved progress" section (write after every level change and on "save state"), a resume check at the top of "Session start" (resume opens with spaced review instead of the diagnostic), "save state" now writes the file (printing the block only without file access), and a resume trigger in the description. Ideas adapted from [jawnlam/lifelong-learning](https://github.com/jawnlam/lifelong-learning) (CC-BY 4.0, by Jawn Lam; reworded, not copied): the learner record and next-session seed in the progress file, explain-it-back, confidence checks, smoothness-as-warning, and the real-world task for level 5 on hands-on topics.
+- **blast-radius**: pstack-only references replaced, since neither skill is vendored: step 6 asks two or three fresh subagents (different models where the tool allows) instead of running `arena`, and the hand-back says "write it plainly" instead of "write it through `unslop`". Step 3's "Solid versus React" is generalised to "the framework's render and effect order". Added `agents/openai.yaml` keeping it user-invoked in Codex, matching upstream's `disable-model-invocation: true`.
 
 ## Written here
 
