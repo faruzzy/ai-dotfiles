@@ -4,18 +4,19 @@
     "CCGUI_CLI_LOGIN_AUTHORIZED": "1",
     "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"
   },
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "permissions": {
     "allow": [
       "Bash(cd * && git *)"
     ]
   },
-  "attribution": {
-    "commit": "",
-    "pr": ""
-  },
   "enabledPlugins": {
     "superlearn@superlearn-marketplace": true,
-    "frontend-design@claude-plugins-official": true
+    "frontend-design@claude-plugins-official": true,
+    "azure@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "superlearn-marketplace": {
