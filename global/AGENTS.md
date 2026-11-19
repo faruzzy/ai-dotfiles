@@ -21,6 +21,7 @@ Applies to every project, in Claude Code (`~/.claude/CLAUDE.md`) and Codex (`~/.
 - Comment only where a reader would otherwise struggle: a non-obvious reason, constraint, or workaround. Don't narrate what the code does. Keep comments short and in plain English.
 - Derive, don't track. If a value can be computed from an existing source of truth (list length, timestamps, the DOM or buffer, props), compute it instead of adding a flag, cache, or copied state that has to be kept in sync. In React, compute during render rather than mirroring props into `useState` + `useEffect`. Store state only when it can't be derived (user choices, event history), and cache only for a measured cost, keyed on the underlying data.
 - Keep control flow flat. Handle edge cases first with guard clauses and early returns. When a branch only contains another two-way decision, merge it into the outer if/else-if chain instead of nesting, unless that would repeat an expensive or meaningful condition. Compute values shared by several branches once, above them but after the guards that make them valid. Aim for a flat list of condition → action.
+- Prefer the framing that deletes code. Before adding a helper, conversion step, cleanup pass, or special-case branch, look for the change to the input's shape or to the caller that makes it unnecessary. Make that change if it's within the task's scope; otherwise list it as a follow-up.
 
 ## Testing
 
