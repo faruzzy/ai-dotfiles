@@ -32,6 +32,7 @@ Personal config for Claude Code and Codex: global instructions, skills, and sett
 | `source-driven-development` | Check official docs for the installed version before coding |
 | `shipping-and-launch` | Pre-deploy checklist, staged rollout, rollback plan |
 | `wizard` | Generate an interactive script for steps only I can do (AWS console, secrets) |
+| `red-team` | Adversarial review that questions the premise first; "ship it" is a valid verdict |
 | `fallow` | TS/JS check for unused code, circular imports, duplication; `audit` after edits |
 | `socratic-tutor` | "Teach me X": diagnostic, skill map, one question at a time, until mastery; progress saved per topic |
 | `/handoff` | Summarise the session for a fresh agent |

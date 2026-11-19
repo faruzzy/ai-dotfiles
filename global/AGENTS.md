@@ -34,7 +34,7 @@ Applies to every project, in Claude Code (`~/.claude/CLAUDE.md`) and Codex (`~/.
 - I often work with fast-moving tools (Next.js, Tailwind v4, Auth.js, AWS). Check the official docs for the installed version before relying on an API or config option you remember.
 - Before calling something done, run the project's own checks (typecheck, lint, tests, build). If something fails or you skipped a step, say so plainly.
 - Don't open pages in a browser (e.g. via Chrome DevTools MCP) unless I asked for it; if inspecting a page would help, ask first.
-- Review your own changes as skeptically as someone else's. Look for what's wrong, not for confirmation. For non-trivial work, get an independent review from a fresh subagent that sees the diff, not your reasoning.
+- Review your own changes as skeptically as someone else's. Look for what's wrong, not for confirmation. For non-trivial work, get an independent review with the `red-team` skill: a fresh subagent that sees the diff and a short brief, not your reasoning.
 - When a mistake recurs (I've corrected it twice, or you notice yourself repeating an instruction), propose enforcing the rule in the strongest form that works, in this order: structure that makes it impossible, types, a lint or CI check whose error names the fix, a test. A written rule in docs or AGENTS.md comes last, for judgment calls nothing can check.
 
 ## Git
