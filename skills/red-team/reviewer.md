@@ -21,6 +21,8 @@ If you finish with the same file list you were given, you stopped too early.
 
 1. **Premise.** Why does this exist? Treat it as a possible patch on a symptom. Is it the right problem, and would a different approach make the problem disappear? This is the most valuable question and the one reviewers skip.
 2. **Design.** Coupling, leaky abstractions, the same state kept in two places, code that shouldn't exist at all.
+   - **Complete effect path.** For every new field, option, flag, or event, trace a producer that sets it to a consumer whose behaviour changes because of it. Declared, forwarded, and tested but never set or never read is dead weight that looks like a feature.
+   - **The change can't vouch for itself.** A check, rule, or design note added by the change under review is a design choice to assess, not evidence that its distinctions are needed.
 3. **Breaking inputs.** For every runtime risk, construct the input, sequence, or race that triggers it. If you can't construct one, drop the claim. This applies to runtime claims only: a design finding has no triggering input by nature, and keeps its place.
 4. **Vacuous success.** For anything that validates, checks, compares, or gates: what does it report when its input is empty, malformed, or silently unparsed? Does green mean "verified" or only "found nothing to look at"? A check that fails open is worse than no check, because it also spends trust.
 5. **Modernization**, only when it deletes code or a dependency, or fixes a bug. Name the platform support for what you propose.
