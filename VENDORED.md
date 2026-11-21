@@ -18,6 +18,7 @@ Skills in `skills/` are copied from upstream and pinned. They don't update on th
 | shipping-and-launch | addyosmani/agent-skills | skills/shipping-and-launch |
 | socratic-tutor | janestreet/agent_skills | socratic-tutor |
 | blast-radius | cursor/plugins | pstack/skills/blast-radius |
+| rederive | EricJujianZou/rederive | skills/rederive |
 
 Pinned commits:
 
@@ -25,6 +26,7 @@ Pinned commits:
 - `addyosmani/agent-skills` @ `301b02b12bff98e4688e6984af6556802322bbde` (2026-11-12) — MIT, see `LICENSES/addyosmani-agent-skills.MIT`
 - `janestreet/agent_skills` @ `7c6715c29548a3b39d4a9545c698ee4fd17a7213` (2026-11-13) — MIT, see `LICENSES/janestreet-agent-skills.MIT`
 - `cursor/plugins` @ `536a3352a050e47cb75f86be497ea304ef342301` (2026-11-17) — MIT, see `LICENSES/cursor-plugins-pstack.MIT`
+- `EricJujianZou/rederive` @ `f8f4629de73a04ba23f40fe4659b629364fa47e9` (2026-11-21) — MIT, see `LICENSES/ericjujianzou-rederive.MIT`
 
 ## Local changes
 
