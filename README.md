@@ -45,6 +45,8 @@ Sources, pinned commits, and local modifications: [VENDORED.md](VENDORED.md).
 
 Drop a directory with a `SKILL.md` into `skills/`, add a row to `VENDORED.md` if it came from elsewhere, and re-run `./install.sh`. Deleting a skill here and re-running removes its stale links.
 
+`npx skills add -g` installs into `~/.agents/skills` on this machine only. To share such a skill, copy it into `skills/`, record it in `VENDORED.md`, then `npx skills remove -g <name>` before re-running `./install.sh`. Codex also reads `~/.agents/skills`, so keeping both copies shows the skill twice.
+
 ## License
 
 MIT ([LICENSE](LICENSE)). Vendored skills keep their upstream licenses, in [LICENSES/](LICENSES/).
