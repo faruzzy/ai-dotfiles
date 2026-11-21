@@ -27,3 +27,27 @@ prefix_rule(pattern=["npm", "run", "dev"], decision="allow")
 # aerospace
 prefix_rule(pattern=["aerospace", "reload-config"], decision="allow")
 prefix_rule(pattern=["aerospace", "list-apps"], decision="allow")
+
+# Destructive git: forbidden, so it beats the allows above. Codex matches
+# prefixes only, so a flag after other arguments (git push origin main --force)
+# isn't caught here.
+prefix_rule(
+    pattern=["git", "add", ["-A", "--all", "."]],
+    decision="forbidden",
+    justification="Stage explicit paths; other sessions may share this checkout.",
+    match=["git add -A", "git add ."],
+    not_match=["git add src/app.ts"],
+)
+prefix_rule(pattern=["git", "commit", ["-a", "-am", "--all", "--no-verify"]], decision="forbidden", justification="Stage explicit paths and keep the hooks.")
+prefix_rule(pattern=["git", "stash"], decision="forbidden", justification="Stashing takes other sessions' changes.")
+prefix_rule(pattern=["git", "reset", "--hard"], decision="forbidden", justification="Discards uncommitted work.")
+prefix_rule(pattern=["git", ["checkout", "restore"], "."], decision="forbidden", justification="Discards uncommitted work.")
+prefix_rule(pattern=["git", ["checkout", "restore"], "--", "."], decision="forbidden", justification="Discards uncommitted work.")
+prefix_rule(pattern=["git", "clean"], decision="forbidden", justification="Deletes untracked files.")
+prefix_rule(
+    pattern=["git", "push", ["-f", "--force", "--force-with-lease", "--no-verify"]],
+    decision="forbidden",
+    justification="Never force-push or skip hooks.",
+    match=["git push --force origin main"],
+    not_match=["git push origin main"],
+)

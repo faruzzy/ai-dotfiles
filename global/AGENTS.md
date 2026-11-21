@@ -41,6 +41,7 @@ Applies to every project, in Claude Code (`~/.claude/CLAUDE.md`) and Codex (`~/.
 
 - Don't run git commands that change repository state (add, commit, push, merge, rebase, reset, amend, cherry-pick, stash, branch deletion, force-push) unless my current message asks for that operation. Approval from an earlier message doesn't carry over, and don't offer to run them. Read-only commands (status, diff, log, show, blame) and editing files are always fine.
 - Commit messages, when I ask for a commit: Conventional Commits, `type(scope): imperative subject`, with a body explaining why when it isn't obvious.
+- When I ask for a commit, stage explicit paths and commit only what you changed in this session: another session may be working in the same checkout. Destructive commands (`git add -A`, `git stash`, `git reset --hard`, `git clean`, force-push, `--no-verify`) are blocked in the tool settings; if one seems necessary, say why and leave it to me.
 - Commit grouping: each commit is one logical change. Put related edits together, even across files, and split unrelated ones into separate commits instead of one catch-all. Don't split a single change into many tiny commits either.
 - Never add a `Co-Authored-By` trailer or a "Generated with …" line to commits or PR descriptions. The history should read as mine.
 
