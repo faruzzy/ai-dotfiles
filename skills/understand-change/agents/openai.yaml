@@ -1,0 +1,5 @@
+interface:
+  display_name: "Understand Change"
+  short_description: "Learn a PR or session change until you can explain it"
+policy:
+  allow_implicit_invocation: false

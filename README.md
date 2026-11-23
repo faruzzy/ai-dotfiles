@@ -37,6 +37,7 @@ Personal config for Claude Code and Codex: global instructions, skills, and sett
 | `socratic-tutor` | "Teach me X": diagnostic, skill map, one question at a time, until mastery; progress saved per topic |
 | `rederive` | Learn a codebase (mine or open source) by re-deriving its design decisions through Socratic questions |
 | `/handoff` | Summarise the session for a fresh agent |
+| `/understand-change` | Walk me through a PR or this session's changes until I can explain them: checklist, explain-back, quizzes |
 | `writing-for-agents` | Editing skills, CLAUDE.md, AGENTS.md (including this repo) |
 
 Sources, pinned commits, and local modifications: [VENDORED.md](VENDORED.md).
