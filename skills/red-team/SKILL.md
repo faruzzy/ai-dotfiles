@@ -20,6 +20,8 @@ A review from someone who didn't build the thing. The reviewer gets a brief, not
    | `OUT OF SCOPE` | What was left out on purpose |
 
    Write `unknown` for any field you don't actually know. A guessed intent sends the review after the wrong target; if the user is around and intent is unclear, ask them.
+
+   Reviewing the same work again after fixes, add `PRIOR ROUNDS`: the round number, and each earlier finding with what happened to it (fixed, disputed and why, deferred). Set `TARGET` to what changed since the last round, with the original target as context.
 3. **Start a fresh subagent with read-only instructions.** Its prompt is the full text of [reviewer.md](reviewer.md), unedited, followed by the brief. Paraphrasing it drops the calibration (severity bar, the ship-it option).
    - Use a general-purpose agent on the full model. A fast search or explore agent type carries its own prompt about returning quickly, which works against the review.
    - Without subagents (some Codex setups), read `reviewer.md` and review under its rules yourself, but head the report **Self-review, not independent** and tell the user an independent review didn't happen.
